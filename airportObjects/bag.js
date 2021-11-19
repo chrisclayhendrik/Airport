@@ -2,6 +2,7 @@
 class Bag {
     constructor(weight) {
         this.weight = weight;
+        this.bagType = null;
     }
 
     isOverLimit() {

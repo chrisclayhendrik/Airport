@@ -17,6 +17,9 @@ class Plane {
     takeOff(airport) {
         this.airport = airport;
     }
+    transports(passenger) {
+        this.passengers.push(passenger);
+    }
 }
 
 

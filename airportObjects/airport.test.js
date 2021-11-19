@@ -32,6 +32,12 @@ describe('Plane class', () => {
         const airport = new Airport('Tokyo');
         plane.takeOff(airport);
     })
+    test('transports passengers', () => {
+        const plane = new Plane('Boeing 747');
+        const airport = new Airport('Tokyo');
+        const passenger = new Passenger('Chris');
+        plane.transports(passenger);
+    })
 })
 
 
@@ -51,6 +57,10 @@ describe('Passenger class', () => {
     test('has bags', () => {
         const passenger = new Passenger('Chris', 54321, '1A');
         expect(passenger.bags).toEqual([]);
+    })
+    test('has bag type', () => {
+        const passenger = new Passenger('Chris', 54321, '1A');
+        expect(passenger.bagType).toEqual([]);
     })
 })
 
@@ -79,5 +89,17 @@ describe('Crewmember class', () => {
     test('has staff number', () => {
         const crewmember = new Crewmember('Sully', 'Pilot', 12345);
         expect(crewmember.staffNumber).toBe(12345);
+    })
+    test('has bag type', () => {
+        const crewmember = new Crewmember('Sully', 'Pilot', 12345);
+        const bag = new Bag(20);
+        crewmember.travelsWith(bag);
+        expect(crewmember.bag).toStrictEqual(bag);
+    })
+    test('is allocated to plane', () => {
+        const crewmember = new Crewmember('Sully', 'Pilot', 12345);
+        const plane = new Plane('Boeing 747');
+        crewmember.isAllocatedTo(plane);
+        expect(crewmember.plane).toStrictEqual(plane);
     })
 })
