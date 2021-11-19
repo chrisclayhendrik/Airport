@@ -58,9 +58,11 @@ describe('Passenger class', () => {
         const passenger = new Passenger('Chris', 54321, '1A');
         expect(passenger.bags).toEqual([]);
     })
-    test('has bag type', () => {
+    test('travels with bag', () => {
         const passenger = new Passenger('Chris', 54321, '1A');
-        expect(passenger.bagType).toEqual([]);
+        const bag = new Bag(40);
+        passenger.travelsWith(bag);
+        expect(passenger.bag).toStrictEqual(bag);
     })
 })
 
@@ -90,7 +92,7 @@ describe('Crewmember class', () => {
         const crewmember = new Crewmember('Sully', 'Pilot', 12345);
         expect(crewmember.staffNumber).toBe(12345);
     })
-    test('has bag type', () => {
+    test('travels with bag', () => {
         const crewmember = new Crewmember('Sully', 'Pilot', 12345);
         const bag = new Bag(20);
         crewmember.travelsWith(bag);

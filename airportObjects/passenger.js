@@ -4,15 +4,14 @@ class Passenger {
         this.passportNumber = passportNumber;
         this.seatNumber = seatNumber;
         this.bags = [];
-        this.bagType = [];
     }
 
     addBag(bag) {
         this.bags.push(bag);
     }
 
-    travelsWith(bagType) {
-        this.bagTypes.push(bagType);
+    travelsWith(bag) {
+        this.bag = bag;
     }
 
 }
