@@ -1,4 +1,4 @@
-const Plane = require('./plane')
+const Airplane = require('./airplane')
 const Passenger = require('./passenger')
 const Bag = require('./bag')
 const Crewmember = require('./crewmember')

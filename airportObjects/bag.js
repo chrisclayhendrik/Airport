@@ -2,11 +2,9 @@
 class Bag {
     constructor(weight) {
         this.weight = weight;
-        this.bagType = null;
-    }
-
-    isOverLimit() {
-        return this.weight > 20;
+        if(!weight) {
+            throw new Error('bag must have a weight');
+        }
     }
 }
 
